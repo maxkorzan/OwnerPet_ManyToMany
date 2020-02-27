@@ -11,7 +11,7 @@ public class Pet {
     private String name;
     private String type;
 
-    @ManyToMany(mappedBy = "petSet")
+    @ManyToMany/*(mappedBy = "petSet")*/
     private Set<Owner> ownerSet;
 
     public long getId() {

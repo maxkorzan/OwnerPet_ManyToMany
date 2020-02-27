@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thmyleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 
-<h1>Owner List</h1>
-<div th:each="owner : ${owners}">
-    <h2 th:text="${owner.name}"></h2>
-    <h2 th:text="${owner.position}"></h2>
+<h1>Owners and their Pets.  Pets and their Owners.</h1>
 
-    <ul>
-        <th:block th:each="pet : ${owner.petSet}">
-            <li th:inline="text">[[${pet.name}]] is a [[$pet.type}]]</li>
-        </th:block>
-    </ul>
+<div th:each="owner : ${owners}">
+
+    <div th:each="pet : ${owner.petSet}">
+        <ul>
+            <li th:inline="text">Owner: [[${owner.name}]] is the [[${owner.position}]]</li>
+            <li th:inline="text">Pet: [[${pet.name}]] is a [[${pet.type}]]</li>
+        </ul>
+    </div>
+
 </div>
+
 
 </body>
 </html>
